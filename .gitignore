@@ -6,3 +6,7 @@ ProjectSettings
 obj
 UserSettings
 Temp
+Plugins
+
+*.csproj
+*.sln

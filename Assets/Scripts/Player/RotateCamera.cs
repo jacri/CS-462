@@ -39,10 +39,10 @@ public class RotateCamera : MonoBehaviour
     {
         if (canLook)
         {
-            playerDelta.y = Input.GetAxisRaw("Horizontal") * vSen;
+            playerDelta.y = Input.GetAxisRaw("Horizontal") * vSen * Time.deltaTime;
             player.Rotate(playerDelta);
 
-            cameraBoomDelta.x = Input.GetAxisRaw("Vertical") * hSen;
+            cameraBoomDelta.x = Input.GetAxisRaw("Vertical") * hSen * Time.deltaTime;
             cameraBoom.Rotate(cameraBoomDelta);
         }
     }

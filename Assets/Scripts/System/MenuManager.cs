@@ -4,7 +4,6 @@ public class MenuManager : MonoBehaviour
 {
     // ===== Private Variables =====================================================================
 
-    //private bool paused;
     private RotateCamera[] rots;
 
 #if UNITY_EDITOR
