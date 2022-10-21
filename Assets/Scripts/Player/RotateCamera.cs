@@ -13,13 +13,12 @@ public class RotateCamera : MonoBehaviour
     [Header("System")]
 
     public bool canLook = false;
+    public Transform cameraBoom;
 
     // ===== Private Variables =====================================================================
 
     private Transform player;
     private Vector3 playerDelta;
-
-    private Transform cameraBoom;
     private Vector3 cameraBoomDelta;
 
     // ===== Start ================================================================================
@@ -28,8 +27,6 @@ public class RotateCamera : MonoBehaviour
     {
         player = transform;
         playerDelta = Vector3.zero;
-
-        cameraBoom = player.GetChild(0);
         cameraBoomDelta = Vector3.zero;
     }
 
@@ -39,10 +36,10 @@ public class RotateCamera : MonoBehaviour
     {
         if (canLook)
         {
-            playerDelta.y = Input.GetAxisRaw("Horizontal") * vSen * Time.deltaTime;
+            playerDelta.y = Input.GetAxisRaw("Mouse X") * vSen * Time.deltaTime;
             player.Rotate(playerDelta);
 
-            cameraBoomDelta.x = Input.GetAxisRaw("Vertical") * hSen * Time.deltaTime;
+            cameraBoomDelta.x = Input.GetAxisRaw("Mouse Y") * hSen * Time.deltaTime;
             cameraBoom.Rotate(cameraBoomDelta);
         }
     }
