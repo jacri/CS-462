@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     // ===== Private Variables =====================================================================
 
     private Transform t;
+    private Animator anim;
     private Transform cameraTransform;
 
     // ===== Start ================================================================================
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start ()
     {
         t = transform;
+        anim = GetComponent<Animator>();
         cameraTransform = Camera.main.transform;
     }
 
@@ -26,5 +28,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 v = new Vector3(Input.GetAxisRaw("Vertical"), 0f, Input.GetAxisRaw("Horizontal"));
         v = cameraTransform.TransformDirection(v);
         t.position += v * walkSpeed * Time.deltaTime;
+
+        anim.SetFloat("Velocity", v.magnitude);
     }
 }
