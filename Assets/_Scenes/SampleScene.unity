@@ -590,6 +590,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf5e11bc4fb04944da9a32fb076a3d50, type: 3}
+--- !u!1 &1333069212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bca7e32d4bb9ae4095191e127e83a14, type: 3}
+  m_PrefabInstance: {fileID: 640338239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1333069216
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333069212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2564598104770899127, guid: 4bca7e32d4bb9ae4095191e127e83a14, type: 3}
+--- !u!1 &1374403115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bf5e11bc4fb04944da9a32fb076a3d50, type: 3}
+  m_PrefabInstance: {fileID: 1153022125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1374403119
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374403115}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 0.19999999, z: 1.1547003}
+  m_Center: {x: 0, y: 0.099999994, z: 0}
 --- !u!1001 &1736736593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -669,7 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de731cb0e369d547ad0e2a3176f1fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hSen: 500
+  hSen: -500
   vSen: -500
   canLook: 0
   cameraBoom: {fileID: 1905260038}
@@ -686,6 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
+  jumpForce: 250
 --- !u!65 &1736736598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -713,7 +751,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!95 &1736736600
 Animator:
