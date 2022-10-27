@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8766754404175955614}
   - component: {fileID: 7955697868753164828}
   - component: {fileID: 6921938796691049281}
-  - component: {fileID: 3788453146951544639}
   - component: {fileID: 3366632695291530388}
   m_Layer: 0
   m_Name: Ocean Hex
@@ -98,7 +97,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4575734979276873811, guid: 10dba6ed9fd1be644a7cfa98e1c7886c, type: 3}
 --- !u!114 &6921938796691049281
@@ -117,19 +116,6 @@ MonoBehaviour:
   x: 0
   y: 0
   neighbors: []
---- !u!65 &3788453146951544639
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7109276015520671563}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.2, z: 0.3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3366632695291530388
 Rigidbody:
   m_ObjectHideFlags: 0

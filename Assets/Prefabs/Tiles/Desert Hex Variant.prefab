@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7458555524965690663, guid: 1e84ba482f2c3334ebce59489eb1c787, type: 3}
       propertyPath: m_Name
-      value: Desert Hex
+      value: Desert Hex Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7839021025599371165, guid: 1e84ba482f2c3334ebce59489eb1c787, type: 3}
       propertyPath: m_RootOrder

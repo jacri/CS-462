@@ -11,21 +11,13 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3788453146951544639, guid: e0ee2d0697375bc48bceb034372658ca, type: 3}
-      propertyPath: m_Size.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3788453146951544639, guid: e0ee2d0697375bc48bceb034372658ca, type: 3}
-      propertyPath: m_Size.y
-      value: 1.2
-      objectReference: {fileID: 0}
     - target: {fileID: 6921938796691049281, guid: e0ee2d0697375bc48bceb034372658ca, type: 3}
       propertyPath: type
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7109276015520671563, guid: e0ee2d0697375bc48bceb034372658ca, type: 3}
       propertyPath: m_Name
-      value: Land Hex Variant
+      value: Forest Hex Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7629916295074430449, guid: e0ee2d0697375bc48bceb034372658ca, type: 3}
       propertyPath: m_RootOrder
@@ -77,3 +69,22 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dfec0da41d33414429fd5c74e70897f4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0ee2d0697375bc48bceb034372658ca, type: 3}
+--- !u!1 &7458555524965690663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7109276015520671563, guid: e0ee2d0697375bc48bceb034372658ca, type: 3}
+  m_PrefabInstance: {fileID: 372431410403412588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &475863028777151885
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7458555524965690663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4575734979276873811, guid: 10dba6ed9fd1be644a7cfa98e1c7886c, type: 3}

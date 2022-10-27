@@ -11,12 +11,16 @@ public class WorldGenerator : MonoBehaviour
 
     public int width;
     public int height;
+    public string seed;
+    public Vector3 worldScale = Vector3.one;
+    public GameObject generatingWorldUI;
+
+    [Space(10)]
+    [Header("Noise Settings")]
 
     public float xOrg;
     public float yOrg;
-
-    public float scale;
-    public string seed;
+    public float noiseScale;
 
     [Space(10)]
 
@@ -33,6 +37,13 @@ public class WorldGenerator : MonoBehaviour
     private System.Random rand;
     private Tile[,] terrainTiles;
     private float[,] terrainHeight;
+
+    // ===== Awake ================================================================================
+    
+    private void Awake ()
+    {
+        generatingWorldUI.SetActive(true);
+    }
 
     // ===== Start ================================================================================
 
@@ -59,9 +70,14 @@ public class WorldGenerator : MonoBehaviour
         GenerateTerrainHeight();
         PlaceTiles();
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
 
         GenerateBiomes();
+
+        yield return new WaitForSeconds(0.01f);
+
+        transform.localScale = worldScale;
+        generatingWorldUI.SetActive(false);
     }
 
     private void ClearWorld ()
@@ -97,8 +113,8 @@ public class WorldGenerator : MonoBehaviour
 
             while (x < width)
             {
-                float xCoord = xOrg + x / width * scale;
-                float yCoord = yOrg + y / height * scale;
+                float xCoord = xOrg + x / width * noiseScale;
+                float yCoord = yOrg + y / height * noiseScale;
                 float sample = Mathf.PerlinNoise(xCoord, yCoord);
                 terrainHeight[(int)x, (int)y] = sample;
                 x++;
@@ -110,6 +126,7 @@ public class WorldGenerator : MonoBehaviour
 
     private void PlaceTiles ()
     {
+        bool gen = false;
         GameObject tile = genBiomes[0].tile;
 
         for (int y = 0; y < height; y++) 
@@ -120,13 +137,19 @@ public class WorldGenerator : MonoBehaviour
                 {
                     if (terrainHeight[x, y] >= b.minElevation && terrainHeight[x, y] < b.maxElevation)
                     {
+                        gen = true;
                         tile = b.tile;
                         break;
                     }
                 }
 
-                terrainTiles[x, y] = Instantiate(tile, new Vector3(y % 2 == 0 ? x : x + 0.5f, 0, y * 0.87f), Quaternion.Euler(-90f, 0f, 0f), transform).GetComponent<Tile>();
-                terrainTiles[x, y].SetCoords(x, y);
+                if (gen)
+                {
+                    terrainTiles[x, y] = Instantiate(tile, new Vector3(y % 2 == 0 ? x : x + 0.5f, 0, y * 0.87f), Quaternion.Euler(-90f, 0f, 0f), transform).GetComponent<Tile>();
+                    terrainTiles[x, y].SetCoords(x, y);
+                }
+
+                gen = false;          
             }
         }
     }
@@ -141,7 +164,7 @@ public class WorldGenerator : MonoBehaviour
 
         await System.Threading.Tasks.Task.Delay(10);
 
-        GenerateDeepOcean();
+        //GenerateDeepOcean();
 
         foreach (LocalizedBiome b in localBiomes)
             GenerateLocalizedBiome(rand.Next(b.minZones, b.maxZones), b.zoneSize, b);
@@ -175,16 +198,13 @@ public class WorldGenerator : MonoBehaviour
         for (int i = 0; i < numZones; i++)
         {
             Vector3 pos = new Vector3(rand.Next(0, width), 0, rand.Next(0, height));
-
             Generate(pos);
 
             for (int j = 0; j < rand.Next(1, (int)radius * 2); j++)
             {
                 Vector3 offset = new Vector3(rand.Next(-(int)(radius / 2), (int)(radius / 2)), 0f, rand.Next(-(int)(radius / 2), (int)(radius / 2)));
-
                 Generate(pos + offset);
-            }
-                
+            }  
         }
     }
 
