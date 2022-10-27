@@ -621,6 +621,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4359636105344160802, guid: 1e84ba482f2c3334ebce59489eb1c787, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7458555524965690663, guid: 1e84ba482f2c3334ebce59489eb1c787, type: 3}
       propertyPath: m_Name
       value: Forest Hex Variant
@@ -800,7 +804,7 @@ PrefabInstance:
       objectReference: {fileID: 7458555524965690663, guid: 1e84ba482f2c3334ebce59489eb1c787, type: 3}
     - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
       propertyPath: genBiomes.Array.data[0].type
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
       propertyPath: genBiomes.Array.data[1].tile
@@ -850,5 +854,105 @@ PrefabInstance:
       propertyPath: genBiomes.Array.data[2].minElevation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: localBiomes.Array.data[0].tiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: localBiomes.Array.data[1].tiles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 1343040088848998739, guid: 32d3c1f54bc9d1640b5493fbb1eeadf1, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 293064620472015209, guid: 2ee4004797904534e8775a47d65dde02, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 7085479428702731225, guid: 33c71a56b051d82438232ec446814b23, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 5401877138152332647, guid: c17ae1942526c5f4cb0eeb15a6ee6abe, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[4]
+      value: 
+      objectReference: {fileID: 6384371065093286734, guid: af9fc8be5d9a161409326fc752e48601, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[5]
+      value: 
+      objectReference: {fileID: 1644594286307595411, guid: 5f3ebd544fc326f429613c298b730407, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[6]
+      value: 
+      objectReference: {fileID: 83223181475160424, guid: 37941efdeaebe554c956d4e677dcd84a, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[7]
+      value: 
+      objectReference: {fileID: 1868990189200022774, guid: 327a6e806474dda48ae1ebdaddafcd0a, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[8]
+      value: 
+      objectReference: {fileID: 9028085133600184040, guid: 20bb5d48ee12ef844868a68ca605feaf, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[9]
+      value: 
+      objectReference: {fileID: 7993251624599794951, guid: 936a2322d278dde4eb7f6646675ea661, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[10]
+      value: 
+      objectReference: {fileID: 4956438573196705875, guid: 2c60e0add6076bc4794b3dc7550c764f, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[11]
+      value: 
+      objectReference: {fileID: 6384371065093286734, guid: af9fc8be5d9a161409326fc752e48601, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[12]
+      value: 
+      objectReference: {fileID: 1644594286307595411, guid: 5f3ebd544fc326f429613c298b730407, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[13]
+      value: 
+      objectReference: {fileID: 83223181475160424, guid: 37941efdeaebe554c956d4e677dcd84a, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[14]
+      value: 
+      objectReference: {fileID: 1868990189200022774, guid: 327a6e806474dda48ae1ebdaddafcd0a, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[15]
+      value: 
+      objectReference: {fileID: 9028085133600184040, guid: 20bb5d48ee12ef844868a68ca605feaf, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[16]
+      value: 
+      objectReference: {fileID: 7993251624599794951, guid: 936a2322d278dde4eb7f6646675ea661, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[17]
+      value: 
+      objectReference: {fileID: 5401877138152332647, guid: c17ae1942526c5f4cb0eeb15a6ee6abe, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[18]
+      value: 
+      objectReference: {fileID: 4956438573196705875, guid: 2c60e0add6076bc4794b3dc7550c764f, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: genBiomes.Array.data[0].tiles.Array.data[19]
+      value: 
+      objectReference: {fileID: 7458555524965690663, guid: 1e84ba482f2c3334ebce59489eb1c787, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: localBiomes.Array.data[0].tiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 7219246835697390668, guid: 9f9290b2b7f8e82438096766a8c8ae9a, type: 3}
+    - target: {fileID: 1549646640793077981, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}
+      propertyPath: localBiomes.Array.data[1].tiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 3445380053426685156, guid: 207f0ea6462d1fe4abd43aa17ddc43fc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 656c78cf4f89c454b8dd53cebd4f5ff2, type: 3}

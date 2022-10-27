@@ -10,6 +10,10 @@ public class Biome
     [Header("Biome Info")]
 
     public Tile.Type type;
-    public GameObject tile;
+    public GameObject[] tiles;
     public Material material;
+
+    // ===== Public Functions =====================================================================
+
+    public GameObject GetTile () => tiles[WorldGenerator.rand.Next(0, tiles.Length)];
 }

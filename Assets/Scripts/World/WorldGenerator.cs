@@ -28,12 +28,12 @@ public class WorldGenerator : MonoBehaviour
 
     // ===== Hidden Variables =====================================================================
 
+    public static System.Random rand;
     public Dictionary<Tile.Type, Material> biomeMaterials;
 
     // ===== Private Variables =====================================================================
 
     private int seedInt;
-    private System.Random rand;
     private Tile[,] terrainTiles;
     private float[,] terrainHeight;
 
@@ -126,7 +126,7 @@ public class WorldGenerator : MonoBehaviour
     private void PlaceTiles ()
     {
         bool gen = false;
-        GameObject tile = genBiomes[0].tile;
+        GameObject tile = genBiomes[0].GetTile();
 
         for (int y = 0; y < height; y++) 
         {
@@ -137,7 +137,7 @@ public class WorldGenerator : MonoBehaviour
                     if (terrainHeight[x, y] >= b.minElevation && terrainHeight[x, y] < b.maxElevation)
                     {
                         gen = true;
-                        tile = b.tile;
+                        tile = b.GetTile();
                         break;
                     }
                 }
