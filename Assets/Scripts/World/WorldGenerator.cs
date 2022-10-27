@@ -170,18 +170,6 @@ public class WorldGenerator : MonoBehaviour
             GenerateLocalizedBiome(rand.Next(b.minZones, b.maxZones), b.zoneSize, b);
     }
 
-    private void GenerateDeepOcean ()
-    {
-        foreach (Tile t in terrainTiles)
-        {
-            if (t.type == Tile.Type.Ocean &&
-                t.neighbors.Aggregate(true, (deep, nextTile) => deep && (int)nextTile.type <= 1))
-            {
-                t.ChangeType(Tile.Type.DeepOcean);
-            }
-        }
-    }
-
     private void GenerateLocalizedBiome (int numZones, float radius, LocalizedBiome biome)
     {
         void Generate(Vector3 pos)

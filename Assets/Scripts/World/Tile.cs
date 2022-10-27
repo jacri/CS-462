@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 [System.Serializable]
 public class Tile : MonoBehaviour
@@ -20,7 +19,6 @@ public class Tile : MonoBehaviour
     public Type type;
     public int x;
     public int y;
-    public List<Tile> neighbors;
 
     // Private
 
@@ -33,12 +31,6 @@ public class Tile : MonoBehaviour
     {
         this.x = x;
         this.y = y;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Tile>() && !neighbors.Contains(other.GetComponent<Tile>()))
-            neighbors.Add(other.GetComponent<Tile>());
     }
 
     public void ChangeType (Type newType)
