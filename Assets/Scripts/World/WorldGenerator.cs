@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -163,8 +162,6 @@ public class WorldGenerator : MonoBehaviour
             biomeMaterials.Add(b.type, b.material);
 
         await System.Threading.Tasks.Task.Delay(10);
-
-        //GenerateDeepOcean();
 
         foreach (LocalizedBiome b in localBiomes)
             GenerateLocalizedBiome(rand.Next(b.minZones, b.maxZones), b.zoneSize, b);
