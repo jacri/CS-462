@@ -175,7 +175,7 @@ public class WorldGenerator : MonoBehaviour
             {
                 Tile t = col.GetComponent<Tile>();
 
-                if ((int)t.type > 1)
+                if ((int)t.type > 0)
                     t.ChangeType(biome.type);
             }
         }
