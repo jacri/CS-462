@@ -10,6 +10,8 @@ public class Tile : MonoBehaviour
         Forest = 0,
         Desert = 1,
         Tundra = 2,
+        Village = 3,
+        Tower = 4,
     }
 
     // ===== Public Variables =====================================================================

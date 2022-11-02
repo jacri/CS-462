@@ -144,7 +144,7 @@ public class WorldGenerator : MonoBehaviour
 
                 if (gen)
                 {
-                    terrainTiles[x, y] = Instantiate(tile, new Vector3(y % 2 == 0 ? x : x + 0.5f, 0, y * 0.87f), Quaternion.Euler(-90f, 0f, 0f), transform).GetComponent<Tile>();
+                    terrainTiles[x, y] = Instantiate(tile, new Vector3(y % 2 == 0 ? x : x + 0.5f, 0, y * 0.87f), Quaternion.Euler(-90f, rand.Next(0, 5) * 60f, 0f), transform).GetComponent<Tile>();
                     terrainTiles[x, y].SetCoords(x, y);
                 }
 
@@ -175,7 +175,7 @@ public class WorldGenerator : MonoBehaviour
             {
                 Tile t = col.GetComponent<Tile>();
 
-                if ((int)t.type > 0)
+                if (t.type != Tile.Type.Forest)
                     t.ChangeType(biome.type);
             }
         }
