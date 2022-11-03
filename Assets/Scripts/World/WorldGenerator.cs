@@ -13,6 +13,7 @@ public class WorldGenerator : MonoBehaviour
     public string seed;
     public Vector3 worldScale = Vector3.one;
     public GameObject generatingWorldUI;
+    public GameObject playerHolder;
 
     [Space(10)]
     [Header("Noise Settings")]
@@ -49,6 +50,7 @@ public class WorldGenerator : MonoBehaviour
     private void Start ()
     {
         GenerateWorld();
+        PlacePlayer();
     }
 
     // ===== World Generation =====================================================================
@@ -192,6 +194,15 @@ public class WorldGenerator : MonoBehaviour
             }  
         }
     }
+
+    // ===== Place Player =========================================================================
+
+    private void PlacePlayer ()
+    {
+        
+    }
+
+    // ===== System ===============================================================================
 
     public void Quit ()
     {
