@@ -1,17 +1,18 @@
 using UnityEngine;
 using Cinemachine;
+using System.Collections;
 
 public class ControlShipTrigger : MonoBehaviour
 {
     // ===== Public Variables =====================================================================
 
-    public Transform shipCameraTarget;
-    public MonoBehaviour shipControlScript;
-
-    public Transform playerCameraTarget;
+    public GameObject playerFollow;
+    public GameObject playerMainCamera;
     public StarterAssets.ThirdPersonController playerControlScript;
 
-    public CinemachineVirtualCamera cam;
+    public GameObject shipFollow;
+     public GameObject shipMainCamera;
+    public StarterAssets.ThirdPersonController shipControlScript;
 
     // ===== Private Variables =====================================================================
 
@@ -36,15 +37,24 @@ public class ControlShipTrigger : MonoBehaviour
 
         if (followingPlayer)
         {
-            cam.Follow = playerCameraTarget;
+            playerFollow.SetActive(true);
+            playerMainCamera.SetActive(true);
             playerControlScript.enabled = true;
+
+            shipFollow.SetActive(false);
+            shipMainCamera.SetActive(false);
+            //shipControlScript.enabled = false;
         }
            
-
         else
         {
-            cam.Follow = shipCameraTarget;
+            playerFollow.SetActive(false);
+            playerMainCamera.SetActive(false);
             playerControlScript.enabled = false;
+
+            shipFollow.SetActive(true);
+            shipMainCamera.SetActive(true);
+            //shipControlScript.enabled = true;
         }
             
     }
