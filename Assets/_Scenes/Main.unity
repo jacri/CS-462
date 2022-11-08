@@ -498,52 +498,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130804789}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &151003290
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 151003291}
-  - component: {fileID: 151003292}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &151003291
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151003290}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.839373, y: -3.6286306, z: 25.772543}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2082930114}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &151003292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151003290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 461cd396e3fc7cc4eb9c92bde05c1b9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Character: {fileID: 1894935973}
-  CharacterCamera: {fileID: 1319197848}
 --- !u!20 &195276329 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8944336655422409496, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
@@ -1770,7 +1724,7 @@ GameObject:
   - component: {fileID: 1319197849}
   - component: {fileID: 1319197848}
   m_Layer: 0
-  m_Name: ExampleCamera
+  m_Name: Ship Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1789,7 +1743,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2082930114}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 19.976, y: 0, z: 0}
 --- !u!114 &1319197848
 MonoBehaviour:
@@ -1806,9 +1760,9 @@ MonoBehaviour:
   Camera: {fileID: 1319197851}
   FollowPointFraming: {x: 0, y: 5}
   FollowingSharpness: 1e+9
-  DefaultDistance: 30
-  MinDistance: 30
-  MaxDistance: 35
+  DefaultDistance: 20
+  MinDistance: 20
+  MaxDistance: 25
   DistanceMovementSpeed: 5
   DistanceMovementSharpness: 10
   InvertX: 0
@@ -2620,7 +2574,7 @@ GameObject:
   - component: {fileID: 1894935972}
   - component: {fileID: 1894935971}
   m_Layer: 9
-  m_Name: ExampleCharacter
+  m_Name: Ship Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2640,7 +2594,7 @@ Transform:
   m_Children:
   - {fileID: 1245439705}
   m_Father: {fileID: 2082930114}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!54 &1894935971
 Rigidbody:
@@ -2715,7 +2669,7 @@ MonoBehaviour:
   Motor: {fileID: 1894935972}
   MaxStableMoveSpeed: 50
   StableMovementSharpness: 10
-  OrientationSharpness: 20
+  OrientationSharpness: 5
   OrientationMethod: 1
   MaxAirMoveSpeed: 10
   AirAccelerationSpeed: 30
@@ -2873,7 +2827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924729167}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.84, z: 0}
+  m_LocalPosition: {x: 0, y: 12.06, z: -9.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3187,6 +3141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2082930114}
+  - component: {fileID: 2082930115}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -3206,12 +3161,25 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 151003291}
   - {fileID: 1319197847}
   - {fileID: 1894935970}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2082930115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082930113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c006b2f5e5f47554491358b58026cff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 1894935973}
+  CharacterCamera: {fileID: 1319197848}
 --- !u!1 &2104395084 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9091781039717921096, guid: 4bca7e32d4bb9ae4095191e127e83a14, type: 3}
