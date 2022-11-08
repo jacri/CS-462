@@ -1,23 +1,32 @@
 using UnityEngine;
-using Cinemachine;
-using System.Collections;
 
 public class ControlShipTrigger : MonoBehaviour
 {
     // ===== Public Variables =====================================================================
 
-    public GameObject playerFollow;
-    public GameObject playerMainCamera;
-    public StarterAssets.ThirdPersonController playerControlScript;
+    [Header("Player Controller Information")]
 
-    public GameObject shipFollow;
-     public GameObject shipMainCamera;
-    public StarterAssets.ThirdPersonController shipControlScript;
+    public Camera playerMainCamera;
+    public KinematicCharacterController.Examples.ExamplePlayer playerControlScript;
+
+    [Space(10)]
+    [Header("Ship Controller Information")]
+
+    public Camera shipMainCamera;
+    public KinematicCharacterController.Examples.ShipPlayer shipControlScript;
+
+    [Space(10)]
+    [Header("Transforms")]
+
+    public Transform playerTransform;
+    public GameObject playerController;
+    public Transform shipPlayerParentTransform;
 
     // ===== Private Variables =====================================================================
 
     private bool inTrigger = false;
     private bool followingPlayer = true;
+    private Vector3 pos;
 
     // ===== Update ===============================================================================
     
@@ -37,26 +46,34 @@ public class ControlShipTrigger : MonoBehaviour
 
         if (followingPlayer)
         {
-            playerFollow.SetActive(true);
-            playerMainCamera.SetActive(true);
+            playerMainCamera.enabled = true;
             playerControlScript.enabled = true;
 
-            shipFollow.SetActive(false);
-            shipMainCamera.SetActive(false);
-            //shipControlScript.enabled = false;
+            shipMainCamera.enabled = false;
+            shipControlScript.enabled = false;
+
+            Vector3 pos = playerController.transform.position;
+            playerTransform.SetParent(null);
+            playerController.AddComponent<Rigidbody>().isKinematic = true;
+            playerController.GetComponent<Rigidbody>().MovePosition(transform.position);
+            playerController.GetComponent<KinematicCharacterController.Examples.ExampleCharacterController>().enabled = true;
+            playerController.GetComponent<KinematicCharacterController.KinematicCharacterMotor>().enabled = true;
+            playerController.transform.position = pos;
         }
            
         else
         {
-            playerFollow.SetActive(false);
-            playerMainCamera.SetActive(false);
+            playerMainCamera.enabled = false;
             playerControlScript.enabled = false;
 
-            shipFollow.SetActive(true);
-            shipMainCamera.SetActive(true);
-            //shipControlScript.enabled = true;
+            shipMainCamera.enabled = true;
+            shipControlScript.enabled = true;
+
+            playerController.GetComponent<KinematicCharacterController.Examples.ExampleCharacterController>().enabled = false;
+            playerController.GetComponent<KinematicCharacterController.KinematicCharacterMotor>().enabled = false;
+            Destroy(playerController.GetComponent<Rigidbody>());
+            playerTransform.SetParent(shipPlayerParentTransform);
         }
-            
     }
 
     // ===== Trigger ================================================================================
