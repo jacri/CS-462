@@ -61,14 +61,12 @@
      <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\ExampleMovingPlatform.cs" />
      <Compile Include="Assets\Scripts\World\Tile.cs" />
      <Compile Include="Assets\KinematicCharacterController\Core\KinematicCharacterSystem.cs" />
-     <Compile Include="Assets\Scripts\Player\RotateCamera.cs" />
      <Compile Include="Assets\KinematicCharacterController\Walkthrough\15- Root motion example\Scripts\MyCharacterController.cs" />
      <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\StressTestManager.cs" />
      <Compile Include="Assets\KinematicCharacterController\ExampleCharacter\Scripts\ExampleCharacterController.cs" />
      <Compile Include="Assets\KinematicCharacterController\Core\PhysicsMover.cs" />
      <Compile Include="Assets\KinematicCharacterController\Walkthrough\16- FramePerfect Rotation\Scripts\MyCharacterController.cs" />
      <Compile Include="Assets\KinematicCharacterController\Core\IMoverController.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\KinematicCharacterController\Walkthrough\8- Creating a moving platform\Scripts\MyPlayer.cs" />
      <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\b- Double Jumping\MyPlayer.cs" />
      <Compile Include="Assets\KinematicCharacterController\Core\KCCSettings.cs" />
@@ -112,6 +110,7 @@
      <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\PrefabLauncher.cs" />
      <Compile Include="Assets\Scripts\World\Biome.cs" />
      <Compile Include="Assets\KinematicCharacterController\Walkthrough\7- Orienting towards arbitrary up direction\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerJump.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

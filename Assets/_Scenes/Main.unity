@@ -380,9 +380,6 @@ MonoBehaviour:
   playerInstance: {fileID: 0}
   shipMainCamera: {fileID: 0}
   shipControlScript: {fileID: 0}
-  playerTransform: {fileID: 0}
-  playerController: {fileID: 0}
-  shipPlayerParentTransform: {fileID: 0}
 --- !u!1 &130804789
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,9 +431,6 @@ MonoBehaviour:
   playerInstance: {fileID: 479726148}
   shipMainCamera: {fileID: 1319197851}
   shipControlScript: {fileID: 2082930115}
-  playerTransform: {fileID: 479726149}
-  playerController: {fileID: 685357958}
-  shipPlayerParentTransform: {fileID: 130804790}
 --- !u!65 &130804792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -877,11 +871,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5608080787080632834, guid: 8008e81fec4d6b244950abb4af99b5e9, type: 3}
   m_PrefabInstance: {fileID: 5608080787006705734}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &479726149 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5608080787080632835, guid: 8008e81fec4d6b244950abb4af99b5e9, type: 3}
-  m_PrefabInstance: {fileID: 5608080787006705734}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &492692952 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8955265850993052495, guid: 4bca7e32d4bb9ae4095191e127e83a14, type: 3}
@@ -1040,6 +1029,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5608080787420474304, guid: 8008e81fec4d6b244950abb4af99b5e9, type: 3}
   m_PrefabInstance: {fileID: 5608080787006705734}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &685357961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5608080787420474319, guid: 8008e81fec4d6b244950abb4af99b5e9, type: 3}
+  m_PrefabInstance: {fileID: 5608080787006705734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685357958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76020eee813ed7844bcea94c5d5ce76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &685357964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685357958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d807d283e080208488666d4ffb8a426a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: {x: 0, y: -30, z: 0}
+  controller: {fileID: 685357961}
 --- !u!1 &786197507 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4585098129556512444, guid: 4bca7e32d4bb9ae4095191e127e83a14, type: 3}
