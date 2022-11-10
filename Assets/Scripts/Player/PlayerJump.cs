@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerJump : MonoBehaviour
 {
@@ -21,13 +22,27 @@ public class PlayerJump : MonoBehaviour
 
             else 
             {
-                controller.Gravity = Vector3.zero;
-
-                Vector3 v = rb.velocity;
-                v.y = 0f;
-                rb.velocity = v;
+                StartCoroutine(StopNegativeVelocity());
             }
             
         }
+    }
+
+    private IEnumerator StopNegativeVelocity ()
+    {
+        while (controller.lastKnownVelocity.y > 0)
+            yield return new WaitForEndOfFrame();
+
+        controller.Gravity = Vector3.zero;
+
+        while (!controller.Motor.GroundingStatus.IsStableOnGround)
+        {
+            if (controller.Gravity.y > gravity.y)
+                controller.Gravity -= new Vector3(0f, 0.01f, 0f);
+
+            yield return new WaitForEndOfFrame();
+        }
+            
+        controller.Gravity = gravity;
     }
 }

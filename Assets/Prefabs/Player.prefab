@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 5608080787420474319}
   - component: {fileID: 5608080787420474318}
   - component: {fileID: 5608080787420474305}
+  - component: {fileID: 685357964}
   m_Layer: 9
   m_Name: Player Character Controller
   m_TagString: Player
@@ -296,9 +297,9 @@ MonoBehaviour:
   OrientationMethod: 1
   MaxAirMoveSpeed: 10
   AirAccelerationSpeed: 30
-  Drag: 0
+  Drag: 2.5
   AllowJumpingWhenSliding: 1
-  JumpUpSpeed: 10
+  JumpUpSpeed: 15
   JumpScalableForwardSpeed: 0
   JumpPreGroundingGraceTime: 0.1
   JumpPostGroundingGraceTime: 0.1
@@ -311,6 +312,7 @@ MonoBehaviour:
   MeshRoot: {fileID: 5608080786030576057}
   CameraFollowPoint: {fileID: 5608080787167882847}
   CrouchedCapsuleHeight: 1
+  lastKnownVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &5608080787420474318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +371,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &685357964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608080787420474304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d807d283e080208488666d4ffb8a426a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: {x: 0, y: -30, z: 0}
+  rb: {fileID: 5608080787420474305}
+  controller: {fileID: 5608080787420474319}
 --- !u!1 &5608080787723316056
 GameObject:
   m_ObjectHideFlags: 0

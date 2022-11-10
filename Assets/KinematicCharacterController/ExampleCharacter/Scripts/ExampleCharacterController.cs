@@ -70,6 +70,8 @@ namespace KinematicCharacterController.Examples
 
         public CharacterState CurrentCharacterState { get; private set; }
 
+        public Vector3 lastKnownVelocity = Vector3.zero;
+
         private Collider[] _probedColliders = new Collider[8];
         private RaycastHit[] _probedHits = new RaycastHit[8];
         private Vector3 _moveInputVector;
@@ -383,6 +385,8 @@ namespace KinematicCharacterController.Examples
                         break;
                     }
             }
+
+            lastKnownVelocity = currentVelocity;
         }
 
         /// <summary>

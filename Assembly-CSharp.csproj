@@ -39,6 +39,7 @@
      <Compile Include="Assets\KinematicCharacterController\Walkthrough\14- Climbing Ladders\Scripts\MyCharacterController.cs" />
      <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
      <Compile Include="Assets\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerJump.cs" />
      <Compile Include="Assets\KinematicCharacterController\Walkthrough\1- Player Camera Character Setup\Scripts\MyCharacterController.cs" />
      <Compile Include="Assets\KinematicCharacterController\Walkthrough\13- Swimming state\Scripts\MyCharacterController.cs" />
      <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\ExampleAIController.cs" />
@@ -110,7 +111,6 @@
      <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\PrefabLauncher.cs" />
      <Compile Include="Assets\Scripts\World\Biome.cs" />
      <Compile Include="Assets\KinematicCharacterController\Walkthrough\7- Orienting towards arbitrary up direction\Scripts\MyPlayer.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerJump.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

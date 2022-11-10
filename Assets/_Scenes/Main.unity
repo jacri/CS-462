@@ -1053,7 +1053,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: {x: 0, y: -30, z: 0}
+  rb: {fileID: 685357968}
   controller: {fileID: 685357961}
+--- !u!54 &685357968 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5608080787420474305, guid: 8008e81fec4d6b244950abb4af99b5e9, type: 3}
+  m_PrefabInstance: {fileID: 5608080787006705734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &786197507 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4585098129556512444, guid: 4bca7e32d4bb9ae4095191e127e83a14, type: 3}
@@ -2254,6 +2260,7 @@ MonoBehaviour:
   MeshRoot: {fileID: 28892124}
   CameraFollowPoint: {fileID: 1924729168}
   CrouchedCapsuleHeight: 1
+  lastKnownVelocity: {x: 0, y: 0, z: 0}
 --- !u!136 &1894935974
 CapsuleCollider:
   m_ObjectHideFlags: 8
@@ -3353,6 +3360,14 @@ PrefabInstance:
     - target: {fileID: 5608080787080632835, guid: 8008e81fec4d6b244950abb4af99b5e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608080787420474319, guid: 8008e81fec4d6b244950abb4af99b5e9, type: 3}
+      propertyPath: Drag
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608080787420474319, guid: 8008e81fec4d6b244950abb4af99b5e9, type: 3}
+      propertyPath: JumpUpSpeed
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8008e81fec4d6b244950abb4af99b5e9, type: 3}
