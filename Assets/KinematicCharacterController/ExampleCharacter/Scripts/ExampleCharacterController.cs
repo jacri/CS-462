@@ -1,8 +1,5 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
-using KinematicCharacterController;
-using System;
 
 namespace KinematicCharacterController.Examples
 {
