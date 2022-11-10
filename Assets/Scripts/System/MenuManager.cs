@@ -4,20 +4,11 @@ public class MenuManager : MonoBehaviour
 {
     // ===== Private Variables =====================================================================
 
-    private RotateCamera[] rots;
-
 #if UNITY_EDITOR
     private bool paused = true;
 #else
     private bool paused = false;
 #endif
-
-    // ===== Start ================================================================================
-    
-    private void Start ()
-    {
-        rots = FindObjectsOfType<RotateCamera>();
-    }
 
     // ===== Update ===============================================================================
     
@@ -36,18 +27,12 @@ public class MenuManager : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
-        foreach (RotateCamera r in rots)
-            r.canLook = true;
     }
 
     public void UnlockCursor () 
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
-        foreach (RotateCamera r in rots)
-            r.canLook = false;
     }
 
     // ===== Pause ================================================================================
