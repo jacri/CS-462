@@ -6,8 +6,8 @@ public class ControlShipTrigger : MonoBehaviour
 
     [Header("Player Controller Information")]
 
-    public Camera playerMainCamera;
-    public KinematicCharacterController.Examples.ExamplePlayer playerControlScript;
+    public GameObject playerPrefab;
+    public GameObject playerInstance;
 
     [Space(10)]
     [Header("Ship Controller Information")]
@@ -15,18 +15,11 @@ public class ControlShipTrigger : MonoBehaviour
     public Camera shipMainCamera;
     public KinematicCharacterController.Examples.ShipPlayer shipControlScript;
 
-    [Space(10)]
-    [Header("Transforms")]
-
-    public Transform playerTransform;
-    public GameObject playerController;
-    public Transform shipPlayerParentTransform;
-
     // ===== Private Variables =====================================================================
 
     private bool inTrigger = false;
     private bool followingPlayer = true;
-    private Vector3 pos;
+    private Quaternion playerRot;
 
     // ===== Update ===============================================================================
     
@@ -46,33 +39,19 @@ public class ControlShipTrigger : MonoBehaviour
 
         if (followingPlayer)
         {
-            playerMainCamera.enabled = true;
-            playerControlScript.enabled = true;
+            playerInstance = Instantiate(playerPrefab, transform.position, playerRot);
 
             shipMainCamera.enabled = false;
             shipControlScript.enabled = false;
-
-            Vector3 pos = playerController.transform.position;
-            playerTransform.SetParent(null);
-            playerController.AddComponent<Rigidbody>().isKinematic = true;
-            playerController.GetComponent<Rigidbody>().MovePosition(transform.position);
-            playerController.GetComponent<KinematicCharacterController.Examples.ExampleCharacterController>().enabled = true;
-            playerController.GetComponent<KinematicCharacterController.KinematicCharacterMotor>().enabled = true;
-            playerController.transform.position = pos;
         }
            
         else
         {
-            playerMainCamera.enabled = false;
-            playerControlScript.enabled = false;
-
             shipMainCamera.enabled = true;
             shipControlScript.enabled = true;
 
-            playerController.GetComponent<KinematicCharacterController.Examples.ExampleCharacterController>().enabled = false;
-            playerController.GetComponent<KinematicCharacterController.KinematicCharacterMotor>().enabled = false;
-            Destroy(playerController.GetComponent<Rigidbody>());
-            playerTransform.SetParent(shipPlayerParentTransform);
+            playerRot = playerInstance.transform.rotation;
+            Destroy(playerInstance);
         }
     }
 
