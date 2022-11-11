@@ -71,6 +71,7 @@ namespace KinematicCharacterController.Examples
         public CharacterState CurrentCharacterState { get; private set; }
 
         public Vector3 lastKnownVelocity = Vector3.zero;
+        public PlayerAnimator anim;
 
         private Collider[] _probedColliders = new Collider[8];
         private RaycastHit[] _probedHits = new RaycastHit[8];
@@ -506,6 +507,10 @@ namespace KinematicCharacterController.Examples
         {
             if (transform.position.y <= -2.19)
                 FindObjectOfType<PlayerManager>().Respawn();
+
+            else if (anim != null)
+                anim.Land();
+                
         }
 
         protected void OnLeaveStableGround()
