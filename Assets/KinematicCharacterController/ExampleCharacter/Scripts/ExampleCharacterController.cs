@@ -504,6 +504,8 @@ namespace KinematicCharacterController.Examples
 
         protected void OnLanded()
         {
+            if (transform.position.y <= -2.19)
+                FindObjectOfType<PlayerManager>().Respawn();
         }
 
         protected void OnLeaveStableGround()
