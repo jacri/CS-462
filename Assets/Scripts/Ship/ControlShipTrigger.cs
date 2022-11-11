@@ -19,7 +19,14 @@ public class ControlShipTrigger : MonoBehaviour
 
     private bool inTrigger = false;
     private bool followingPlayer = true;
-    private Quaternion playerRot;
+    private PlayerManager playerManager;
+
+    // ===== Start ================================================================================
+    
+    private void Start ()
+    {
+        playerManager = FindObjectOfType<PlayerManager>();
+    }
 
     // ===== Update ===============================================================================
     
@@ -39,7 +46,9 @@ public class ControlShipTrigger : MonoBehaviour
 
         if (followingPlayer)
         {
-            playerInstance = Instantiate(playerPrefab, transform.position, playerRot);
+            playerManager.respawnPosition = transform.position;
+            playerManager.respawnRotation = transform.rotation;
+            playerManager.SpawnInstance();
 
             shipMainCamera.enabled = false;
             shipControlScript.enabled = false;
@@ -50,8 +59,8 @@ public class ControlShipTrigger : MonoBehaviour
             shipMainCamera.enabled = true;
             shipControlScript.enabled = true;
 
-            playerRot = playerInstance.transform.rotation;
-            Destroy(playerInstance);
+            playerManager.respawnRotation = playerInstance.transform.rotation;
+            playerManager.DestroyInstance();
         }
     }
 
