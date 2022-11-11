@@ -15,16 +15,11 @@ public class PlayerJump : MonoBehaviour
     {
         if (!controller.Motor.GroundingStatus.IsStableOnGround && Input.GetKeyDown(KeyCode.Space))
         {
-            if (controller.Gravity == Vector3.zero)
-            {
+            if (controller.Gravity != gravity)
                 controller.Gravity = gravity;
-            }
 
             else 
-            {
                 StartCoroutine(StopNegativeVelocity());
-            }
-            
         }
     }
 
