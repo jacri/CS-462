@@ -22,6 +22,16 @@ public class PlayerAnimator : MonoBehaviour
     // ===== Public Functions =====================================================================
 
     public void Land () => anim.SetTrigger("Land");
-    public void StartAiming () => anim.SetBool("Aiming", true);
-    public void StopAiming () => anim.SetBool("Aiming", false);
+
+    public void StartAiming () 
+    {
+        anim.SetBool("Aiming", true);
+        anim.SetTrigger("StartAiming");
+    }
+
+    public void StopAiming () 
+    {
+        anim.SetBool("Aiming", false);
+        anim.SetTrigger("StopAiming");
+    }
 }
