@@ -30,7 +30,10 @@ public class PlayerWeapon : MonoBehaviour
         anim.StartAiming();
         
         cam.FollowPointFraming = aimingOffset;
+
+        cam.MinDistance = aimingDistance;
         cam.DefaultDistance = aimingDistance;
+        cam.MaxDistance = aimingDistance;
     }
 
     private void StopAiming ()
@@ -38,6 +41,9 @@ public class PlayerWeapon : MonoBehaviour
         anim.StopAiming();
         
         cam.FollowPointFraming = Vector2.zero;
-        cam.DefaultDistance = 25f;
+        
+        cam.MinDistance = neutralDistance;
+        cam.DefaultDistance = neutralDistance;
+        cam.MaxDistance = neutralDistance;
     }
 }
