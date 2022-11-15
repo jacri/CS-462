@@ -13,7 +13,7 @@ public class WorldGenerator : MonoBehaviour
     public string seed;
     public Vector3 worldScale = Vector3.one;
     public GameObject generatingWorldUI;
-    public GameObject playerHolder;
+    public GameObject towerTile;
 
     [Space(10)]
     [Header("Noise Settings")]
@@ -38,6 +38,9 @@ public class WorldGenerator : MonoBehaviour
     private Tile[,] terrainTiles;
     private float[,] terrainHeight;
 
+    private int towerX = -1;
+    private int towerY = -1;
+
     // ===== Awake ================================================================================
     
     private void Awake ()
@@ -50,7 +53,6 @@ public class WorldGenerator : MonoBehaviour
     private void Start ()
     {
         GenerateWorld();
-        PlacePlayer();
     }
 
     // ===== World Generation =====================================================================
@@ -71,11 +73,17 @@ public class WorldGenerator : MonoBehaviour
         GenerateTerrainHeight();
         PlaceTiles();
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.02f);
 
         GenerateBiomes();
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.02f);
+
+        PlaceTower();
+
+        yield return new WaitForSeconds(0.02f);
+
+        //FindObjectOfType<Tower>().Generate();
 
         transform.localScale = worldScale;
         generatingWorldUI.SetActive(false);
@@ -148,6 +156,12 @@ public class WorldGenerator : MonoBehaviour
                 {
                     terrainTiles[x, y] = Instantiate(tile, new Vector3(y % 2 == 0 ? x : x + 0.5f, 0, y * 0.87f), Quaternion.Euler(-90f, rand.Next(0, 5) * 60f, 0f), transform).GetComponent<Tile>();
                     terrainTiles[x, y].SetCoords(x, y);
+
+                    if ((towerX == -1 || towerY == -1 ) || rand.Next(0, 10) <= 2)
+                    {
+                        towerX = x;
+                        towerY = y;
+                    }
                 }
 
                 gen = false;          
@@ -195,11 +209,14 @@ public class WorldGenerator : MonoBehaviour
         }
     }
 
-    // ===== Place Player =========================================================================
+    // ===== Place Tower ==========================================================================
 
-    private void PlacePlayer ()
+    private void PlaceTower ()
     {
-        
+        Vector3 pos = terrainTiles[towerX, towerY].transform.position;
+        Quaternion rot = terrainTiles[towerX, towerY].transform.rotation;
+        Destroy(terrainTiles[towerX, towerY].gameObject);
+        terrainTiles[towerX, towerY] = Instantiate(towerTile, pos, rot, transform).GetComponent<Tile>();
     }
 
     // ===== System ===============================================================================

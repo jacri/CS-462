@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
 
     // ===== Update ===============================================================================
     
+    /*
     private void Update ()
     {
         if (Input.GetButtonDown("Cancel"))
@@ -19,7 +20,7 @@ public class MenuManager : MonoBehaviour
 
         if (paused && Input.GetMouseButtonDown(0))
             Unpause();
-    }
+    } */
 
     // ===== Cursor ===============================================================================
     
@@ -33,6 +34,23 @@ public class MenuManager : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    // ===== Status Screens =========================================================================
+
+    public void ShowWinScreen ()
+    {
+        transform.GetChild(2).gameObject.SetActive(true);
+    }
+
+    public void ShowDeathScreen ()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void ReturnToMainMenu ()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
     // ===== Pause ================================================================================

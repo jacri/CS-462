@@ -21,26 +21,29 @@ public class PlayerManager : MonoBehaviour
     public void DestroyInstance ()
     {
         Destroy(instance);
-    } 
+    }
 
     public void SpawnInstance ()
     {
         instance = Instantiate(prefab, respawnPosition, respawnRotation);
     }
 
-    public void SpawnInstance (Vector3 pos)
+    public void SpawnInstance (int damage)
     {
-        instance = Instantiate(prefab, pos, respawnRotation);
-    }
-    
-    public void SpawnInstance (Vector3 pos, Quaternion rot)
-    {
-        instance = Instantiate(prefab, pos, rot);
+        instance = Instantiate(prefab, respawnPosition, respawnRotation);
+        PlayerHealth h = instance.GetComponentInChildren<PlayerHealth>();
+        h.TakeDamage(h.maxHealth - damage);
     }
 
     public void Respawn ()
     {
         DestroyInstance();
         SpawnInstance();
+    }
+
+    public void Respawn (int health)
+    {
+        DestroyInstance();
+        SpawnInstance(health);
     }
 }

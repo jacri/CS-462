@@ -59,7 +59,7 @@ public class ControlShipTrigger : MonoBehaviour
             shipMainCamera.enabled = true;
             shipControlScript.enabled = true;
 
-            playerManager.respawnRotation = playerInstance.transform.rotation;
+            //playerManager.respawnRotation = playerInstance.transform.rotation;
             playerManager.DestroyInstance();
         }
     }

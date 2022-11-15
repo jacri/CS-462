@@ -505,8 +505,8 @@ namespace KinematicCharacterController.Examples
 
         protected void OnLanded()
         {
-            if (transform.position.y <= -2.19)
-                FindObjectOfType<PlayerManager>().Respawn();
+            if (transform.position.y <= -2)
+                FindObjectOfType<PlayerManager>().Respawn(GetComponent<PlayerHealth>().currentHealth - 5);
 
             else if (anim != null)
                 anim.Land();

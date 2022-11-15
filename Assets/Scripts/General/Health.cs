@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -6,19 +7,23 @@ public class Health : MonoBehaviour
 
     public int maxHealth;
     public int currentHealth;
+    public float deathAnimTime;
+    public Slider slider;
 
     // ===== Public Functions =====================================================================
 
     public virtual void TakeDamage (int amnt)
     {
-        currentHealth -= maxHealth;
+        currentHealth -= amnt;
 
         if (currentHealth <= 0)
             Die();
+
+        slider.value = currentHealth;
     }
 
     public virtual void Die ()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, deathAnimTime);
     }
 }

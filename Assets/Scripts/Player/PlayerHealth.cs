@@ -6,6 +6,6 @@ public class PlayerHealth : Health
 
     public override void Die ()
     {
-        
+        FindObjectOfType<MenuManager>().ShowDeathScreen();
     }
 }
