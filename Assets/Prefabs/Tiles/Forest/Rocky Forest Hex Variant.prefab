@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2025720729420365875}
   - component: {fileID: 1614226765105922009}
   - component: {fileID: 4865119432567541379}
+  - component: {fileID: 6700372439936854240}
   m_Layer: 0
   m_Name: rockLarge
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6700372439936854240
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033436303394000627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 838457192069878753, guid: 8490d96aa10c622479e1d5fb13f890cf, type: 3}
 --- !u!1001 &3005737653909393045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,7 +115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109276015520671563, guid: e0ee2d0697375bc48bceb034372658ca, type: 3}
       propertyPath: m_Name
-      value: Rocky Forest Hex
+      value: Rocky Forest Hex Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7629916295074430449, guid: e0ee2d0697375bc48bceb034372658ca, type: 3}
       propertyPath: m_RootOrder

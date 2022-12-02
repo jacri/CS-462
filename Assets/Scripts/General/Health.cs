@@ -9,11 +9,16 @@ public class Health : MonoBehaviour
     public int currentHealth;
     public float deathAnimTime;
     public Slider slider;
+    public AudioSource takeDamageSound;
+    public AudioSource deathSoundEffect;
 
     // ===== Public Functions =====================================================================
 
     public virtual void TakeDamage (int amnt)
     {
+        if (takeDamageSound != null)
+            takeDamageSound.Play();
+
         currentHealth -= amnt;
 
         if (currentHealth <= 0)
@@ -24,6 +29,9 @@ public class Health : MonoBehaviour
 
     public virtual void Die ()
     {
+        if (deathSoundEffect != null)
+            deathSoundEffect.Play();
+
         Destroy(gameObject, deathAnimTime);
     }
 }

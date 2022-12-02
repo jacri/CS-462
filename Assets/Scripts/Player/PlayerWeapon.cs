@@ -40,6 +40,7 @@ public class PlayerWeapon : MonoBehaviour
     [Header("Components")]
 
     public PlayerAnimator anim;
+    public AudioSource attackSoundEffect;
     public KinematicCharacterController.Examples.ExampleCharacterCamera camController;
     public KinematicCharacterController.Examples.ExampleCharacterController playerController;
 
@@ -95,6 +96,9 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (Time.time >= nextShot && energy >= energyPerShot)
         {
+            if (attackSoundEffect != null)
+                attackSoundEffect.Play();
+
             energy -= energyPerShot;
             energySlider.value = energy;
 

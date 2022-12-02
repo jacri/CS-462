@@ -15,6 +15,7 @@ public class DragonAI : MonoBehaviour
     public int attackDamage;
     public float attackSpeed;
     public float attackRange;
+    public AudioSource attackSoundEffect;
 
     // ===== Private Variables =====================================================================
 
@@ -39,11 +40,11 @@ public class DragonAI : MonoBehaviour
     
     private void Update ()
     {
-        if (player == null)
-            player = FindObjectOfType<PlayerHealth>().transform;
-
-        // if (playerManager.instance != null)
-        // {
+        if (playerManager.playerExists)
+        {
+            if (player == null)
+                player = FindObjectOfType<PlayerHealth>().transform;
+            
             float dist = Vector3.Distance(t.position, player.position);
 
             if (dist > attackRange && dist < maxTrackingDistance)
@@ -56,7 +57,7 @@ public class DragonAI : MonoBehaviour
             
             else if (dist < maxTrackingDistance && Time.time > nextAttack)
                 Attack();
-        //}
+        }
     }
 
     // ===== Private Functions =====================================================================
@@ -65,6 +66,9 @@ public class DragonAI : MonoBehaviour
     {
         if (player != null)
         {
+            if (attackSoundEffect != null)
+                attackSoundEffect.Play();
+
             nextAttack = Time.time + attackSpeed;
             anim.SetTrigger("Attack");
             player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);

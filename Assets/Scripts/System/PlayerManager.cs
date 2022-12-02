@@ -4,6 +4,7 @@ public class PlayerManager : MonoBehaviour
 {
     // ===== Public Variables =====================================================================
     
+    public bool playerExists;
     public GameObject prefab;
     public GameObject instance; 
     public Vector3 respawnPosition;
@@ -21,11 +22,13 @@ public class PlayerManager : MonoBehaviour
     public void DestroyInstance ()
     {
         Destroy(instance);
+        playerExists = false;
     }
 
     public void SpawnInstance ()
     {
         instance = Instantiate(prefab, respawnPosition, respawnRotation);
+        playerExists = true;
     }
 
     public void SpawnInstance (int damage)
@@ -33,6 +36,7 @@ public class PlayerManager : MonoBehaviour
         instance = Instantiate(prefab, respawnPosition, respawnRotation);
         PlayerHealth h = instance.GetComponentInChildren<PlayerHealth>();
         h.TakeDamage(h.maxHealth - damage);
+        playerExists = true;
     }
 
     public void Respawn ()

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6129284004046133672}
   - component: {fileID: 8082928506270443898}
   - component: {fileID: 5479590943968929686}
+  - component: {fileID: 5225140086498499404}
   m_Layer: 0
   m_Name: tree 3
   m_TagString: Untagged
@@ -84,6 +85,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5225140086498499404
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2587430756091126443}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1942738671701644109, guid: 06a83cd351b53794aa80afe3602df79f, type: 3}
 --- !u!1001 &8165265206463379892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93,7 +108,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7458555524965690663, guid: 1e84ba482f2c3334ebce59489eb1c787, type: 3}
       propertyPath: m_Name
-      value: Light Forest Hex
+      value: Light Forest Hex Variant 2
       objectReference: {fileID: 0}
     - target: {fileID: 7839021025599371165, guid: 1e84ba482f2c3334ebce59489eb1c787, type: 3}
       propertyPath: m_RootOrder

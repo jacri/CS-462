@@ -5,6 +5,7 @@ public class PlayerAnimator : MonoBehaviour
     // ===== Public Variables =====================================================================
 
     public Animator anim;
+    public AudioSource landSoundEffect;
     public KinematicCharacterController.Examples.ExampleCharacterController controller;
 
     // ===== Update ===============================================================================
@@ -21,7 +22,11 @@ public class PlayerAnimator : MonoBehaviour
 
     // ===== Public Functions =====================================================================
 
-    public void Land () => anim.SetTrigger("Land");
+    public void Land ()
+    {
+        anim.SetTrigger("Land");
+        landSoundEffect.Play();
+    } 
 
     public void StartAiming () 
     {

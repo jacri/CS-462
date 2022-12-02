@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    // ===== Public Variables =====================================================================
+
+    public GameObject pauseMenu;
+
     // ===== Private Variables =====================================================================
 
 #if UNITY_EDITOR
@@ -12,15 +16,14 @@ public class MenuManager : MonoBehaviour
 
     // ===== Update ===============================================================================
     
-    /*
     private void Update ()
     {
         if (Input.GetButtonDown("Cancel"))
             TogglePause();
 
-        if (paused && Input.GetMouseButtonDown(0))
-            Unpause();
-    } */
+        // if (!started && paused && Input.GetMouseButtonDown(0))
+        //     Unpause();
+    }
 
     // ===== Cursor ===============================================================================
     
@@ -53,20 +56,27 @@ public class MenuManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
+    public void Quit () 
+    {
+        Application.Quit();
+    }
+
     // ===== Pause ================================================================================
 
     public void Pause () 
     {
         paused = true;
+        pauseMenu.SetActive(true);
         UnlockCursor();
         Time.timeScale = 0f;
     }
 
     public void Unpause ()
     {
+        Time.timeScale = 1f;
         paused = false;
         LockCursor();
-        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
     }
 
     private void TogglePause () 
