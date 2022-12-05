@@ -54,7 +54,7 @@ public class MenuManager : MonoBehaviour
     public void ReturnToMainMenu ()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
-    }
+    } 
 
     public void Quit () 
     {
@@ -68,12 +68,12 @@ public class MenuManager : MonoBehaviour
         paused = true;
         pauseMenu.SetActive(true);
         UnlockCursor();
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     public void Unpause ()
     {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         paused = false;
         LockCursor();
         pauseMenu.SetActive(false);

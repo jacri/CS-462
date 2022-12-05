@@ -17,6 +17,14 @@ public class PlayerManager : MonoBehaviour
         SpawnInstance();
     }
 
+    // ===== Update ===============================================================================
+    
+    private void Update ()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+    }
+
     // ===== Public Functions =====================================================================
 
     public void DestroyInstance ()
