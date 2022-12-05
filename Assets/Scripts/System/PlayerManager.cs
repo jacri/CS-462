@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     private void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 
     // ===== Public Functions =====================================================================
