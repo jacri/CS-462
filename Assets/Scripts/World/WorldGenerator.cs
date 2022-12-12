@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -11,12 +10,17 @@ public class WorldGenerator : MonoBehaviour
 
     public int width;
     public int height;
+    public string seed;
+    public Vector3 worldScale = Vector3.one;
+    public GameObject generatingWorldUI;
+    public GameObject towerTile;
+
+    [Space(10)]
+    [Header("Noise Settings")]
 
     public float xOrg;
     public float yOrg;
-
-    public float scale;
-    public string seed;
+    public float noiseScale;
 
     [Space(10)]
 
@@ -25,14 +29,24 @@ public class WorldGenerator : MonoBehaviour
 
     // ===== Hidden Variables =====================================================================
 
+    public static System.Random rand;
     public Dictionary<Tile.Type, Material> biomeMaterials;
 
     // ===== Private Variables =====================================================================
 
     private int seedInt;
-    private System.Random rand;
     private Tile[,] terrainTiles;
     private float[,] terrainHeight;
+
+    private int towerX = -1;
+    private int towerY = -1;
+
+    // ===== Awake ================================================================================
+    
+    private void Awake ()
+    {
+        generatingWorldUI.SetActive(true);
+    }
 
     // ===== Start ================================================================================
 
@@ -59,9 +73,20 @@ public class WorldGenerator : MonoBehaviour
         GenerateTerrainHeight();
         PlaceTiles();
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.02f);
 
         GenerateBiomes();
+
+        yield return new WaitForSeconds(0.02f);
+
+        PlaceTower();
+
+        yield return new WaitForSeconds(0.02f);
+
+        //FindObjectOfType<Tower>().Generate();
+
+        transform.localScale = worldScale;
+        generatingWorldUI.SetActive(false);
     }
 
     private void ClearWorld ()
@@ -97,8 +122,8 @@ public class WorldGenerator : MonoBehaviour
 
             while (x < width)
             {
-                float xCoord = xOrg + x / width * scale;
-                float yCoord = yOrg + y / height * scale;
+                float xCoord = xOrg + x / width * noiseScale;
+                float yCoord = yOrg + y / height * noiseScale;
                 float sample = Mathf.PerlinNoise(xCoord, yCoord);
                 terrainHeight[(int)x, (int)y] = sample;
                 x++;
@@ -110,7 +135,8 @@ public class WorldGenerator : MonoBehaviour
 
     private void PlaceTiles ()
     {
-        GameObject tile = genBiomes[0].tile;
+        bool gen = false;
+        GameObject tile = genBiomes[0].GetTile();
 
         for (int y = 0; y < height; y++) 
         {
@@ -120,13 +146,25 @@ public class WorldGenerator : MonoBehaviour
                 {
                     if (terrainHeight[x, y] >= b.minElevation && terrainHeight[x, y] < b.maxElevation)
                     {
-                        tile = b.tile;
+                        gen = true;
+                        tile = b.GetTile();
                         break;
                     }
                 }
 
-                terrainTiles[x, y] = Instantiate(tile, new Vector3(y % 2 == 0 ? x : x + 0.5f, 0, y * 0.87f), Quaternion.Euler(-90f, 0f, 0f), transform).GetComponent<Tile>();
-                terrainTiles[x, y].SetCoords(x, y);
+                if (gen)
+                {
+                    terrainTiles[x, y] = Instantiate(tile, new Vector3(y % 2 == 0 ? x : x + 0.5f, 0, y * 0.87f), Quaternion.Euler(-90f, rand.Next(0, 5) * 60f, 0f), transform).GetComponent<Tile>();
+                    terrainTiles[x, y].SetCoords(x, y);
+
+                    if ((towerX == -1 || towerY == -1 ) || rand.Next(0, 10) <= 2)
+                    {
+                        towerX = x;
+                        towerY = y;
+                    }
+                }
+
+                gen = false;          
             }
         }
     }
@@ -141,22 +179,8 @@ public class WorldGenerator : MonoBehaviour
 
         await System.Threading.Tasks.Task.Delay(10);
 
-        GenerateDeepOcean();
-
         foreach (LocalizedBiome b in localBiomes)
             GenerateLocalizedBiome(rand.Next(b.minZones, b.maxZones), b.zoneSize, b);
-    }
-
-    private void GenerateDeepOcean ()
-    {
-        foreach (Tile t in terrainTiles)
-        {
-            if (t.type == Tile.Type.Ocean &&
-                t.neighbors.Aggregate(true, (deep, nextTile) => deep && (int)nextTile.type <= 1))
-            {
-                t.ChangeType(Tile.Type.DeepOcean);
-            }
-        }
     }
 
     private void GenerateLocalizedBiome (int numZones, float radius, LocalizedBiome biome)
@@ -167,7 +191,7 @@ public class WorldGenerator : MonoBehaviour
             {
                 Tile t = col.GetComponent<Tile>();
 
-                if ((int)t.type > 1)
+                if (t.type != Tile.Type.Forest)
                     t.ChangeType(biome.type);
             }
         }
@@ -175,18 +199,27 @@ public class WorldGenerator : MonoBehaviour
         for (int i = 0; i < numZones; i++)
         {
             Vector3 pos = new Vector3(rand.Next(0, width), 0, rand.Next(0, height));
-
             Generate(pos);
 
             for (int j = 0; j < rand.Next(1, (int)radius * 2); j++)
             {
                 Vector3 offset = new Vector3(rand.Next(-(int)(radius / 2), (int)(radius / 2)), 0f, rand.Next(-(int)(radius / 2), (int)(radius / 2)));
-
                 Generate(pos + offset);
-            }
-                
+            }  
         }
     }
+
+    // ===== Place Tower ==========================================================================
+
+    private void PlaceTower ()
+    {
+        Vector3 pos = terrainTiles[towerX, towerY].transform.position;
+        Quaternion rot = terrainTiles[towerX, towerY].transform.rotation;
+        Destroy(terrainTiles[towerX, towerY].gameObject);
+        terrainTiles[towerX, towerY] = Instantiate(towerTile, pos, rot, transform).GetComponent<Tile>();
+    }
+
+    // ===== System ===============================================================================
 
     public void Quit ()
     {

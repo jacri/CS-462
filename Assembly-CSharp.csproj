@@ -36,23 +36,92 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\14- Climbing Ladders\Scripts\MyCharacterController.cs" />
      <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
      <Compile Include="Assets\StarterAssets\InputSystem\StarterAssetsInputs.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerJump.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\1- Player Camera Character Setup\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\13- Swimming state\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\ExampleAIController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\6- Crouching\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\Teleporter.cs" />
      <Compile Include="Assets\Scripts\World\GeneralBiome.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\14- Climbing Ladders\Scripts\MyLadder.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\a- Simple Jumping\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\11- Charging state\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\6- Crouching\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\16- FramePerfect Rotation\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\Scripts\Ship\ControlShipTrigger.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\13- Swimming state\Scripts\MyPlayer.cs" />
      <Compile Include="Assets\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\10- Multiple movement states setup\Scripts\MyCharacterController.cs" />
      <Compile Include="Assets\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\4- Landing and leaving ground\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Core\ICharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\PlayableMover.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\ExampleMovingPlatform.cs" />
      <Compile Include="Assets\Scripts\World\Tile.cs" />
-     <Compile Include="Assets\Scripts\Player\RotateCamera.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Core\KinematicCharacterSystem.cs" />
+     <Compile Include="Assets\Scripts\System\MainMenu.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\15- Root motion example\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\StressTestManager.cs" />
+     <Compile Include="Assets\KinematicCharacterController\ExampleCharacter\Scripts\ExampleCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Core\PhysicsMover.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\16- FramePerfect Rotation\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Core\IMoverController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\8- Creating a moving platform\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\b- Double Jumping\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Core\KCCSettings.cs" />
+     <Compile Include="Assets\Scripts\Enemies\DragonAI.cs" />
+     <Compile Include="Assets\Scripts\System\FaceCamera.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\c- Wall Jumping\MyCharacterController.cs" />
      <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
      <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\14- Climbing Ladders\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\11- Charging state\Scripts\MyPlayer.cs" />
      <Compile Include="Assets\Scripts\System\MenuManager.cs" />
+     <Compile Include="Assets\Scripts\General\Projectile.cs" />
+     <Compile Include="Assets\Scripts\General\Health.cs" />
      <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\2- Basic Movement and Gravity\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\FrameratePanel.cs" />
      <Compile Include="Assets\StarterAssets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
+     <Compile Include="Assets\KinematicCharacterController\ExampleCharacter\Scripts\ExampleCharacterCamera.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\15- Root motion example\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\5- Adding velocities and impulses\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\12- NoClip state\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Core\KinematicCharacterMotor.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\BuildManager.cs" />
      <Compile Include="Assets\Scripts\World\WorldGenerator.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\7- Orienting towards arbitrary up direction\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\10- Multiple movement states setup\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\Scripts\System\PlayerManager.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\c- Wall Jumping\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Core\ReadOnlyAttribute.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\a- Simple Jumping\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\9- Custom collision filtering\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\5- Adding velocities and impulses\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\ExampleCharacter\Scripts\ShipPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\1- Player Camera Character Setup\Scripts\MyPlayer.cs" />
      <Compile Include="Assets\Scripts\World\LocalizedBiome.cs" />
      <Compile Include="Assets\StarterAssets\ThirdPersonController\Scripts\ThirdPersonController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\PlanetManager.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\12- NoClip state\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\2- Basic Movement and Gravity\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\9- Custom collision filtering\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\8- Creating a moving platform\Scripts\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\ExampleCharacter\Scripts\ExamplePlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\8- Creating a moving platform\Scripts\MyMovingPlatform.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\b- Double Jumping\MyCharacterController.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\4- Landing and leaving ground\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\PrefabLauncher.cs" />
      <Compile Include="Assets\Scripts\World\Biome.cs" />
+     <Compile Include="Assets\KinematicCharacterController\Walkthrough\7- Orienting towards arbitrary up direction\Scripts\MyPlayer.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerWeapon.cs" />
+     <Compile Include="Assets\Scripts\Tiles\Tower.cs" />
+     <Compile Include="Assets\Scripts\Enemies\DragonHealth.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -64,7 +133,6 @@
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-     <None Include="Assets\StarterAssets\license.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
@@ -763,6 +831,12 @@
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:\Users\jacri\Documents\Unity Projects\CS 462\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+        <HintPath>C:\Users\jacri\Documents\Unity Projects\CS 462\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation">
+        <HintPath>C:\Users\jacri\Documents\Unity Projects\CS 462\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
         <HintPath>C:\Users\jacri\Documents\Unity Projects\CS 462\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
